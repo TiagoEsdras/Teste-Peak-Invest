@@ -8,10 +8,14 @@
       <mat-label>Digite um id</mat-label>
       <input matInput placeholder="Ex. 1" type="number" formControlName="user">
     </mat-form-field>
-    <button (click)="buscarPorId()">Adicionar</button>
   </form>
   <div>
-    <h2>Nome</h2>
+    <div class="example-button-row">
+      <button mat-raised-button class="btn-buscar" (click)="buscarPorId()">Buscar</button>
+    </div>
+  </div>
+  <div>
+    <h2 class="title-section">Nome</h2>
   </div>
   <div>
     <span>Nome retornado api</span>

@@ -6,6 +6,15 @@
 }
 
 .title-section {
-  margin-top: 100px;
+  margin-top: 50px;
   color: #1b304d;
+}
+
+.btn-buscar {
+  background-color: #1b304d;
+  color: white;
+}
+
+.btn-buscar:hover {
+  background-color: #2d4669;
 }
