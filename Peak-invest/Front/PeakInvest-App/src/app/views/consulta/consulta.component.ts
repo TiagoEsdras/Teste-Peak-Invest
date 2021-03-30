@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { Consulta } from 'src/app/shared/models/consulta.models';
+import { ConsultaService } from 'src/app/shared/service/consulta.service';
 
 
 @Component({
@@ -8,8 +10,12 @@ import { FormBuilder, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./consulta.component.css']
 })
 export class ConsultaComponent {
+
+  consulta: Consulta;
+
   public consultaForm: FormGroup;
   constructor(
+    public consultaServive: ConsultaService,
     private fb: FormBuilder
   ) {
     this.consultaForm = this.fb.group({
@@ -20,5 +26,9 @@ export class ConsultaComponent {
   public buscarPorId() {
     const userId = this.consultaForm.controls.user.value;
     console.log(userId);
+    this.consultaServive.getUserById(userId).subscribe(data => {
+      this.consulta = data;
+      console.log(this.consulta);
+    });
   }
 }
