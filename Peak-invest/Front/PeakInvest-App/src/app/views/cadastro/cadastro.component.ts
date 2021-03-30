@@ -29,5 +29,6 @@ export class CadastroComponent {
     this.rest.calcularValorEmprestimo(this.cadastroForm.value).subscribe(data => {
       this.cadastro = data;
     });
+    this.cadastroForm.reset();
   }
 }

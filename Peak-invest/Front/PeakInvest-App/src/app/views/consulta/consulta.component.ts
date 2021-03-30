@@ -29,5 +29,6 @@ export class ConsultaComponent {
     this.consultaServive.getUserById(userId).subscribe(data => {
       this.consulta = data;
     });
+    this.consultaForm.reset();
   }
 }
