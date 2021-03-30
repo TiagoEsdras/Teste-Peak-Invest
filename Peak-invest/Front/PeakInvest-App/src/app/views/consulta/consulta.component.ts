@@ -11,5 +11,4 @@ export class ConsultaComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

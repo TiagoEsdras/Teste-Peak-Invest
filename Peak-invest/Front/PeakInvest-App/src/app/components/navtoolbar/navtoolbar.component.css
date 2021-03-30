@@ -25,10 +25,11 @@ li a {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 4px 8px;
   text-decoration: none;
   border-radius: 30px;
   background-color: #d8c16f;
+  font-size: 15px;
 }
 
 li a:hover {
