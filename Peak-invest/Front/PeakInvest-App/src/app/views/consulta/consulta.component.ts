@@ -28,7 +28,6 @@ export class ConsultaComponent {
     console.log(userId);
     this.consultaServive.getUserById(userId).subscribe(data => {
       this.consulta = data;
-      console.log(this.consulta);
     });
   }
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { Cadastro } from 'src/app/shared/models/cadastro.model';
+import { CadastroService } from 'src/app/shared/service/cadastro.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -9,22 +11,23 @@ import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 export class CadastroComponent {
   public cadastroForm: FormGroup;
 
+  cadastro: Cadastro;
+
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private rest: CadastroService
   ) {  }
 
   ngOnInit(): void {
     this.cadastroForm = this.fb.group({
-      qntParcelas: ['', [Validators.required]],
+      qntParcela: ['', [Validators.required]],
       valorParcela: ['', [Validators.required]],
     });
   }
 
   public enviarDados() {
-    const inputQntParcelas = this.cadastroForm.controls.qntParcelas.value;
-    const inputValorParcela = this.cadastroForm.controls.valorParcela.value;
-    console.log(inputQntParcelas);
-    console.log(inputValorParcela);
+    this.rest.calcularValorEmprestimo(this.cadastroForm.value).subscribe(data => {
+      this.cadastro = data;
+    });
   }
-
 }

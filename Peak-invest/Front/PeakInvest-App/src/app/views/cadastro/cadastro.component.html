@@ -6,7 +6,7 @@
   <form class="form" [formGroup]="cadastroForm">
     <mat-form-field appearance="fill">
       <mat-label>Digite numero de parcelas</mat-label>
-      <input matInput placeholder="Ex. 1" type="number" class="example-right-align" formControlName="qntParcelas">
+      <input matInput placeholder="Ex. 1" type="number" class="example-right-align" formControlName="qntParcela">
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Valor parcelas R$</mat-label>
@@ -22,7 +22,9 @@
     <h2 class="title-section">Valor Total</h2>
   </div>
   <div>
-    <span>R$ Valor retornado api</span>
+    <span *ngIf="cadastro != undefined">
+      <h4>R$ {{cadastro.valorFinal.toFixed(2)}}</h4>
+    </span>
   </div>
 </div>
 
