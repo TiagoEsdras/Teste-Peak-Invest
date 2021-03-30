@@ -1,6 +1,7 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
 using PeakInvest.API.Models;
+using PeakInvest.API.services;
 
 namespace PeakInvest.API.Controllers
 {
@@ -11,11 +12,9 @@ namespace PeakInvest.API.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] Cadastro inputCadastroModel)
         {
-            var infos = new Cadastro(inputCadastroModel.QntParcela, inputCadastroModel.ValorParcela);
-            double valorTotal = Convert.ToDouble(infos.QntParcela * infos.ValorParcela);
-            valorTotal += valorTotal * 0.05;
-            
-            return Ok(valorTotal.ToString("F2"));
+            var service = new EmprestimoService();
+            var resultado = service.CalcularValorTotal(inputCadastroModel);
+            return Ok(resultado);
         }
     }
 }

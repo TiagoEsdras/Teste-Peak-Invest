@@ -15,6 +15,7 @@ import { NavtoolbarComponent } from './components/navtoolbar/navtoolbar.componen
 import { CadastroComponent } from './views/cadastro/cadastro.component';
 import { ConsultaComponent } from './views/consulta/consulta.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -33,7 +34,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatToolbarModule,
     MatFormFieldModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
