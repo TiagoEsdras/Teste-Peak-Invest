@@ -1,0 +1,38 @@
+.nav-menu{
+  background-color: #f7f3e3;
+  display: flex;
+  justify-content: space-around;
+}
+
+.logo-nav {
+  color: #1a3151;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+  margin: 0 10px;
+  width: 100px;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-radius: 30px;
+  background-color: #d8c16f;
+}
+
+li a:hover {
+  background-color: #f7f3e3;
+  border: solid 1px #d8c16f;
+  color: #d8c16f;
+}

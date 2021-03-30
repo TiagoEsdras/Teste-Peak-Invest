@@ -1,0 +1,6 @@
+.home-page {
+  background-image: url("../../../assets/imagem-home.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 90%;
+}
